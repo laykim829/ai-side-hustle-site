@@ -474,8 +474,9 @@
     .then(res => res.json())
     .then(posts => {
       posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const latestPosts = posts.slice(0, 8);
       const grid = document.getElementById('blogGrid');
-      grid.innerHTML = posts.map((post, i) => `
+      grid.innerHTML = latestPosts.map((post, i) => `
         <div class="blog-card">
           <div class="blog-thumb" style="background:${gradients[i % gradients.length]};"></div>
           <div class="blog-body">
