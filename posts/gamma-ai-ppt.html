@@ -67,6 +67,12 @@
   <h1>감마(Gamma)로 AI PPT 제작대행 부업하는 법</h1>
   <div class="meta">2026-07-06 · AI 부업 연구소</div>
 
+    <div class="hero-banner" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:16px;padding:36px 20px;text-align:center;margin-bottom:36px;">
+      <div style="font-size:2.8rem;line-height:1;margin-bottom:10px;">📊</div>
+      <div style="color:#fff;font-weight:700;font-size:1rem;letter-spacing:0.3px;">문서 제작 대행</div>
+    </div>
+
+
   <div class="article-body">
     <p>발표자료는 취업준비생, 소상공인, 스타트업 등 거의 모든 사람이 필요로 하지만, 막상 디자인에 시간을 쏟기는 부담스러운 대표적인 문서입니다. 감마(Gamma) 같은 AI 프레젠테이션 도구를 활용하면 텍스트만 입력해도 완성도 있는 슬라이드 초안이 나와, 이를 다듬어 제작대행 서비스로 판매할 수 있습니다.</p>
 
@@ -112,11 +118,45 @@
     <p>크몽, 숨고 등 재능 마켓에 등록하고, 완료된 프로젝트마다 정중하게 후기를 요청하면 신규 고객 확보에 큰 도움이 됩니다. 초반에는 낮은 가격으로 후기를 쌓는 전략이 유효합니다.</p>
 
     <p>PPT 제작대행은 발표자료가 필요 없는 조직이 거의 없다는 점에서 수요가 꾸준하며, AI 도구 덕분에 제작 시간이 크게 줄어 효율 좋은 부업으로 자리잡고 있습니다.</p>
+
+    <div class="ad-box" style="padding:16px;">
+      <style>
+        .cp-banner-mobile{display:none;}
+        @media (max-width:720px){
+          .cp-banner-desktop{display:none;}
+          .cp-banner-mobile{display:block;}
+        }
+      </style>
+      <div class="cp-banner-desktop">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003711,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"680","height":"140"});
+        </script>
+      </div>
+      <div class="cp-banner-mobile">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003715,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"320","height":"100"});
+        </script>
+      </div>
+      <p style="font-size:0.72rem;color:#6d7591;margin-top:10px;">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
   </div>
 
   <div class="disclosure">
     ※ 이 글에는 제휴 마케팅 링크가 포함될 수 있으며, 이를 통해 발생한 구매에 대해 사이트 운영자가 소정의 수수료를 받을 수 있습니다. 또한 본 사이트는 광고 게재를 통해 수익을 창출할 수 있습니다.
   </div>
+
+  <style>
+    .post-nav{display:flex;gap:14px;margin:40px 0 0;flex-wrap:wrap;}
+    .post-nav .nav-link{flex:1;min-width:200px;background:#161d33;border:1px solid #232b46;border-radius:12px;padding:16px 18px;color:#e8ebf5;transition:border-color .2s;}
+    .post-nav .nav-link:hover{border-color:#00d2b4;}
+    .post-nav .nav-label{display:block;font-size:0.78rem;color:#9aa3bd;margin-bottom:6px;}
+    .post-nav .nav-title{display:block;font-size:0.92rem;font-weight:600;line-height:1.4;}
+    .post-nav .nav-next{text-align:right;}
+    @media (max-width:600px){.post-nav{flex-direction:column;}.post-nav .nav-next{text-align:left;}}
+  </style>
+  <div class="post-nav" id="postNav"></div>
 </div>
 
 <footer>
@@ -125,5 +165,30 @@
   <div style="margin-top:10px;">© 2026 AI 부업 연구소</div>
 </footer>
 
+<script>
+(function(){
+  fetch('../posts.json?_=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      posts.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+      var path = location.pathname.split('/').pop();
+      var idx = posts.findIndex(function(p){ return p.url.indexOf(path) !== -1; });
+      if (idx === -1) return;
+      var newer = idx > 0 ? posts[idx - 1] : null;
+      var older = idx < posts.length - 1 ? posts[idx + 1] : null;
+      var nav = document.getElementById('postNav');
+      if (!nav) return;
+      var html = '';
+      if (older) {
+        html += '<a class="nav-link nav-prev" href="' + older.url.replace('posts/','') + '"><span class="nav-label">\u2190 \uC774\uC804 \uAE00</span><span class="nav-title">' + older.title + '</span></a>';
+      }
+      if (newer) {
+        html += '<a class="nav-link nav-next" href="' + newer.url.replace('posts/','') + '"><span class="nav-label">\uB2E4\uC74C \uAE00 \u2192</span><span class="nav-title">' + newer.title + '</span></a>';
+      }
+      nav.innerHTML = html;
+    })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>

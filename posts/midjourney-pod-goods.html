@@ -67,6 +67,12 @@
   <h1>미드저니로 굿즈 디자인해서 POD로 판매하는 법</h1>
   <div class="meta">2026-07-03 · AI 부업 연구소</div>
 
+    <div class="hero-banner" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:16px;padding:36px 20px;text-align:center;margin-bottom:36px;">
+      <div style="font-size:2.8rem;line-height:1;margin-bottom:10px;">🖼️</div>
+      <div style="color:#fff;font-weight:700;font-size:1rem;letter-spacing:0.3px;">굿즈 부업</div>
+    </div>
+
+
   <div class="article-body">
     <p>POD(Print on Demand)는 주문이 들어올 때마다 제작·배송이 이루어지는 방식이라, 재고 부담 없이 디자인만으로 부수입을 만들 수 있는 대표적인 부업입니다. 미드저니로 고유한 디자인을 대량으로 확보할 수 있게 되면서 진입장벽이 더욱 낮아졌습니다.</p>
 
@@ -112,11 +118,45 @@
     <p>하나의 디자인을 티셔츠, 스티커, 폰케이스, 에코백 등 여러 상품 카테고리에 동시 적용하면 추가 작업 없이 판매 채널을 늘릴 수 있습니다. 반응이 좋은 디자인은 색상 배리에이션을 만들어 재등록하는 것도 좋은 전략입니다.</p>
 
     <p>POD 굿즈 부업은 초반에 여러 디자인을 등록해두고 데이터가 쌓이는 것을 기다리는 구조입니다. 팔리는 디자인의 패턴을 파악한 뒤 비슷한 스타일을 확장하는 방식으로 접근하세요.</p>
+
+    <div class="ad-box" style="padding:16px;">
+      <style>
+        .cp-banner-mobile{display:none;}
+        @media (max-width:720px){
+          .cp-banner-desktop{display:none;}
+          .cp-banner-mobile{display:block;}
+        }
+      </style>
+      <div class="cp-banner-desktop">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003711,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"680","height":"140"});
+        </script>
+      </div>
+      <div class="cp-banner-mobile">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003715,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"320","height":"100"});
+        </script>
+      </div>
+      <p style="font-size:0.72rem;color:#6d7591;margin-top:10px;">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
   </div>
 
   <div class="disclosure">
     ※ 이 글에는 제휴 마케팅 링크가 포함될 수 있으며, 이를 통해 발생한 구매에 대해 사이트 운영자가 소정의 수수료를 받을 수 있습니다. 또한 본 사이트는 광고 게재를 통해 수익을 창출할 수 있습니다.
   </div>
+
+  <style>
+    .post-nav{display:flex;gap:14px;margin:40px 0 0;flex-wrap:wrap;}
+    .post-nav .nav-link{flex:1;min-width:200px;background:#161d33;border:1px solid #232b46;border-radius:12px;padding:16px 18px;color:#e8ebf5;transition:border-color .2s;}
+    .post-nav .nav-link:hover{border-color:#00d2b4;}
+    .post-nav .nav-label{display:block;font-size:0.78rem;color:#9aa3bd;margin-bottom:6px;}
+    .post-nav .nav-title{display:block;font-size:0.92rem;font-weight:600;line-height:1.4;}
+    .post-nav .nav-next{text-align:right;}
+    @media (max-width:600px){.post-nav{flex-direction:column;}.post-nav .nav-next{text-align:left;}}
+  </style>
+  <div class="post-nav" id="postNav"></div>
 </div>
 
 <footer>
@@ -125,5 +165,30 @@
   <div style="margin-top:10px;">© 2026 AI 부업 연구소</div>
 </footer>
 
+<script>
+(function(){
+  fetch('../posts.json?_=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      posts.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+      var path = location.pathname.split('/').pop();
+      var idx = posts.findIndex(function(p){ return p.url.indexOf(path) !== -1; });
+      if (idx === -1) return;
+      var newer = idx > 0 ? posts[idx - 1] : null;
+      var older = idx < posts.length - 1 ? posts[idx + 1] : null;
+      var nav = document.getElementById('postNav');
+      if (!nav) return;
+      var html = '';
+      if (older) {
+        html += '<a class="nav-link nav-prev" href="' + older.url.replace('posts/','') + '"><span class="nav-label">\u2190 \uC774\uC804 \uAE00</span><span class="nav-title">' + older.title + '</span></a>';
+      }
+      if (newer) {
+        html += '<a class="nav-link nav-next" href="' + newer.url.replace('posts/','') + '"><span class="nav-label">\uB2E4\uC74C \uAE00 \u2192</span><span class="nav-title">' + newer.title + '</span></a>';
+      }
+      nav.innerHTML = html;
+    })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>

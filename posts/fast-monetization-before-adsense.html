@@ -67,6 +67,12 @@
   <h1>애드센스 승인 전에도 수익 낼 수 있는 빠른 방법 정리</h1>
   <div class="meta">2026-07-07 · AI 부업 연구소</div>
 
+    <div class="hero-banner" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:16px;padding:36px 20px;text-align:center;margin-bottom:36px;">
+      <div style="font-size:2.8rem;line-height:1;margin-bottom:10px;">💰</div>
+      <div style="color:#fff;font-weight:700;font-size:1rem;letter-spacing:0.3px;">빠른 수익화</div>
+    </div>
+
+
   <div class="article-body">
     <p>신생 블로그의 가장 큰 병목은 "애드센스 승인 대기"와 "검색 유입이 붙기까지 걸리는 시간"입니다. 이 두 가지는 콘텐츠를 아무리 잘 써도 하루아침에 해결되지 않습니다. 하지만 승인이나 트래픽을 기다리지 않고도 지금 바로 시작할 수 있는 수익화 채널이 몇 가지 있어, 이를 먼저 세팅해두면 애드센스가 승인되기 전에도 소액이라도 수익을 만들어볼 수 있습니다.</p>
 
@@ -110,11 +116,45 @@
     <p>정리하면, 지금 이 시점에서 실제로 바로 실행 가능한 순서는 ① 쿠팡파트너스 가입 및 관련 글에 링크 삽입 → ② 이미 소개하는 도구들의 자체 제휴 프로그램 확인 및 신청 → ③ 여유가 되면 디지털 상품(전자책/템플릿) 하나를 만들어 판매 링크 추가, 순입니다. 애드센스는 이 세 가지를 병행하면서 승인을 기다리는 배경 작업으로 진행하면 됩니다.</p>
 
     <p>중요한 것은 어떤 방법이든 제휴 관계를 명확히 밝히는 것입니다. 실제로 이 사이트의 각 글 하단에도 제휴 마케팅 링크가 포함될 수 있다는 고지를 넣고 있는데, 새로운 채널을 추가할 때도 이 원칙은 동일하게 지켜야 합니다.</p>
+
+    <div class="ad-box" style="padding:16px;">
+      <style>
+        .cp-banner-mobile{display:none;}
+        @media (max-width:720px){
+          .cp-banner-desktop{display:none;}
+          .cp-banner-mobile{display:block;}
+        }
+      </style>
+      <div class="cp-banner-desktop">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003711,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"680","height":"140"});
+        </script>
+      </div>
+      <div class="cp-banner-mobile">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003715,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"320","height":"100"});
+        </script>
+      </div>
+      <p style="font-size:0.72rem;color:#6d7591;margin-top:10px;">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
   </div>
 
   <div class="disclosure">
     ※ 이 글에는 제휴 마케팅 링크가 포함될 수 있으며, 이를 통해 발생한 구매에 대해 사이트 운영자가 소정의 수수료를 받을 수 있습니다. 또한 본 사이트는 광고 게재를 통해 수익을 창출할 수 있습니다.
   </div>
+
+  <style>
+    .post-nav{display:flex;gap:14px;margin:40px 0 0;flex-wrap:wrap;}
+    .post-nav .nav-link{flex:1;min-width:200px;background:#161d33;border:1px solid #232b46;border-radius:12px;padding:16px 18px;color:#e8ebf5;transition:border-color .2s;}
+    .post-nav .nav-link:hover{border-color:#00d2b4;}
+    .post-nav .nav-label{display:block;font-size:0.78rem;color:#9aa3bd;margin-bottom:6px;}
+    .post-nav .nav-title{display:block;font-size:0.92rem;font-weight:600;line-height:1.4;}
+    .post-nav .nav-next{text-align:right;}
+    @media (max-width:600px){.post-nav{flex-direction:column;}.post-nav .nav-next{text-align:left;}}
+  </style>
+  <div class="post-nav" id="postNav"></div>
 </div>
 
 <footer>
@@ -123,5 +163,30 @@
   <div style="margin-top:10px;">© 2026 AI 부업 연구소</div>
 </footer>
 
+<script>
+(function(){
+  fetch('../posts.json?_=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      posts.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+      var path = location.pathname.split('/').pop();
+      var idx = posts.findIndex(function(p){ return p.url.indexOf(path) !== -1; });
+      if (idx === -1) return;
+      var newer = idx > 0 ? posts[idx - 1] : null;
+      var older = idx < posts.length - 1 ? posts[idx + 1] : null;
+      var nav = document.getElementById('postNav');
+      if (!nav) return;
+      var html = '';
+      if (older) {
+        html += '<a class="nav-link nav-prev" href="' + older.url.replace('posts/','') + '"><span class="nav-label">\u2190 \uC774\uC804 \uAE00</span><span class="nav-title">' + older.title + '</span></a>';
+      }
+      if (newer) {
+        html += '<a class="nav-link nav-next" href="' + newer.url.replace('posts/','') + '"><span class="nav-label">\uB2E4\uC74C \uAE00 \u2192</span><span class="nav-title">' + newer.title + '</span></a>';
+      }
+      nav.innerHTML = html;
+    })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>

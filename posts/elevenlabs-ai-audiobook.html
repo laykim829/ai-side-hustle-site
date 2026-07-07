@@ -124,6 +124,12 @@ nav ul.open{display:flex;}
 <div class="kicker">AI 오디오북 부업</div>
 <h1>엘레븐랩스(ElevenLabs)로 AI 오디오북 만들어 부수입 만드는 법</h1>
 <div class="meta">2026.07.06 · AI 부업 연구소</div>
+
+    <div class="hero-banner" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:16px;padding:36px 20px;text-align:center;margin-bottom:36px;">
+      <div style="font-size:2.8rem;line-height:1;margin-bottom:10px;">🎧</div>
+      <div style="color:#fff;font-weight:700;font-size:1rem;letter-spacing:0.3px;">AI 오디오북 부업</div>
+    </div>
+
 </div>
 
 <div class="article-body">
@@ -201,11 +207,45 @@ new PartnersCoupang.G({"id":1003715,"trackingCode":"AF3401189","subId":null,"tem
 
 <p style="font-size:0.85rem;color:#6d7591;">이 글은 특정 툴의 협찬 없이 작성되었으며, 위 링크는 제휴 링크로 가입 시 사이트 운영자에게 소정의 수수료가 지급될 수 있습니다.</p>
 
+
+    <div class="ad-box" style="padding:16px;">
+      <style>
+        .cp-banner-mobile{display:none;}
+        @media (max-width:720px){
+          .cp-banner-desktop{display:none;}
+          .cp-banner-mobile{display:block;}
+        }
+      </style>
+      <div class="cp-banner-desktop">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003711,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"680","height":"140"});
+        </script>
+      </div>
+      <div class="cp-banner-mobile">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003715,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"320","height":"100"});
+        </script>
+      </div>
+      <p style="font-size:0.72rem;color:#6d7591;margin-top:10px;">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
 </div>
 
 <div class="back-wrap">
 <a href="../index.html#blog" class="back-link">← 다른 부업 가이드 보러가기</a>
 </div>
+
+  <style>
+    .post-nav{display:flex;gap:14px;margin:40px 0 0;flex-wrap:wrap;}
+    .post-nav .nav-link{flex:1;min-width:200px;background:#161d33;border:1px solid #232b46;border-radius:12px;padding:16px 18px;color:#e8ebf5;transition:border-color .2s;}
+    .post-nav .nav-link:hover{border-color:#00d2b4;}
+    .post-nav .nav-label{display:block;font-size:0.78rem;color:#9aa3bd;margin-bottom:6px;}
+    .post-nav .nav-title{display:block;font-size:0.92rem;font-weight:600;line-height:1.4;}
+    .post-nav .nav-next{text-align:right;}
+    @media (max-width:600px){.post-nav{flex-direction:column;}.post-nav .nav-next{text-align:left;}}
+  </style>
+  <div class="post-nav" id="postNav"></div>
 
 <footer id="footer">
 <div class="disclosure">
@@ -224,5 +264,30 @@ const navList = document.getElementById('navList');
 menuBtn.addEventListener('click', () => navList.classList.toggle('open'));
 </script>
 
+<script>
+(function(){
+  fetch('../posts.json?_=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      posts.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+      var path = location.pathname.split('/').pop();
+      var idx = posts.findIndex(function(p){ return p.url.indexOf(path) !== -1; });
+      if (idx === -1) return;
+      var newer = idx > 0 ? posts[idx - 1] : null;
+      var older = idx < posts.length - 1 ? posts[idx + 1] : null;
+      var nav = document.getElementById('postNav');
+      if (!nav) return;
+      var html = '';
+      if (older) {
+        html += '<a class="nav-link nav-prev" href="' + older.url.replace('posts/','') + '"><span class="nav-label">\u2190 \uC774\uC804 \uAE00</span><span class="nav-title">' + older.title + '</span></a>';
+      }
+      if (newer) {
+        html += '<a class="nav-link nav-next" href="' + newer.url.replace('posts/','') + '"><span class="nav-label">\uB2E4\uC74C \uAE00 \u2192</span><span class="nav-title">' + newer.title + '</span></a>';
+      }
+      nav.innerHTML = html;
+    })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>

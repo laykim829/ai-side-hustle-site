@@ -67,6 +67,12 @@
   <h1>신테시아(Synthesia)로 AI 아바타 영상 만들어 부수입 만드는 법</h1>
   <div class="meta">2026-07-07 · AI 부업 연구소</div>
 
+    <div class="hero-banner" style="background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:16px;padding:36px 20px;text-align:center;margin-bottom:36px;">
+      <div style="font-size:2.8rem;line-height:1;margin-bottom:10px;">🎬</div>
+      <div style="color:#fff;font-weight:700;font-size:1rem;letter-spacing:0.3px;">AI 아바타 영상</div>
+    </div>
+
+
   <div class="article-body">
     <p>얼굴을 카메라에 노출하지 않고도 전문적인 영상을 만들고 싶은 사람들이 늘면서, AI 아바타(디지털 휴먼)로 영상을 제작해주는 신테시아(Synthesia) 같은 툴이 빠르게 성장하고 있습니다. 대본만 입력하면 AI 아바타가 자연스러운 표정과 립싱크로 영상을 대신 촬영해주는 방식이라, 촬영 장비나 편집 경험이 없어도 강의·사내 교육·마케팅 영상을 만들 수 있습니다.</p>
 
@@ -116,11 +122,45 @@
          style="display:inline-block;padding:12px 28px;border-radius:10px;font-weight:700;
          background:linear-gradient(90deg,#6c5ce7,#00d2b4);color:#fff;">신테시아 사용해보기 →</a>
     </div>
+
+    <div class="ad-box" style="padding:16px;">
+      <style>
+        .cp-banner-mobile{display:none;}
+        @media (max-width:720px){
+          .cp-banner-desktop{display:none;}
+          .cp-banner-mobile{display:block;}
+        }
+      </style>
+      <div class="cp-banner-desktop">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003711,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"680","height":"140"});
+        </script>
+      </div>
+      <div class="cp-banner-mobile">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+        new PartnersCoupang.G({"id":1003715,"trackingCode":"AF3401189","subId":null,"template":"carousel","width":"320","height":"100"});
+        </script>
+      </div>
+      <p style="font-size:0.72rem;color:#6d7591;margin-top:10px;">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
   </div>
 
   <div class="disclosure">
     ※ 이 글에는 제휴 마케팅 링크가 포함될 수 있으며, 이를 통해 발생한 구매에 대해 사이트 운영자가 소정의 수수료를 받을 수 있습니다. 또한 본 사이트는 광고 게재를 통해 수익을 창출할 수 있습니다.
   </div>
+
+  <style>
+    .post-nav{display:flex;gap:14px;margin:40px 0 0;flex-wrap:wrap;}
+    .post-nav .nav-link{flex:1;min-width:200px;background:#161d33;border:1px solid #232b46;border-radius:12px;padding:16px 18px;color:#e8ebf5;transition:border-color .2s;}
+    .post-nav .nav-link:hover{border-color:#00d2b4;}
+    .post-nav .nav-label{display:block;font-size:0.78rem;color:#9aa3bd;margin-bottom:6px;}
+    .post-nav .nav-title{display:block;font-size:0.92rem;font-weight:600;line-height:1.4;}
+    .post-nav .nav-next{text-align:right;}
+    @media (max-width:600px){.post-nav{flex-direction:column;}.post-nav .nav-next{text-align:left;}}
+  </style>
+  <div class="post-nav" id="postNav"></div>
 </div>
 
 <footer>
@@ -129,5 +169,30 @@
   <div style="margin-top:10px;">© 2026 AI 부업 연구소</div>
 </footer>
 
+<script>
+(function(){
+  fetch('../posts.json?_=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      posts.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+      var path = location.pathname.split('/').pop();
+      var idx = posts.findIndex(function(p){ return p.url.indexOf(path) !== -1; });
+      if (idx === -1) return;
+      var newer = idx > 0 ? posts[idx - 1] : null;
+      var older = idx < posts.length - 1 ? posts[idx + 1] : null;
+      var nav = document.getElementById('postNav');
+      if (!nav) return;
+      var html = '';
+      if (older) {
+        html += '<a class="nav-link nav-prev" href="' + older.url.replace('posts/','') + '"><span class="nav-label">\u2190 \uC774\uC804 \uAE00</span><span class="nav-title">' + older.title + '</span></a>';
+      }
+      if (newer) {
+        html += '<a class="nav-link nav-next" href="' + newer.url.replace('posts/','') + '"><span class="nav-label">\uB2E4\uC74C \uAE00 \u2192</span><span class="nav-title">' + newer.title + '</span></a>';
+      }
+      nav.innerHTML = html;
+    })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>
