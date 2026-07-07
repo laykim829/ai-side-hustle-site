@@ -470,23 +470,42 @@
     'linear-gradient(135deg,#ff7a59,#6c5ce7)',
     'linear-gradient(135deg,#3a86ff,#00d2b4)'
   ];
+  const PAGE_SIZE = 8;
+  function renderPosts(grid, list) {
+    grid.innerHTML = list.map((post, i) => `
+      <div class="blog-card">
+        <div class="blog-thumb" style="background:${gradients[i % gradients.length]};"></div>
+        <div class="blog-body">
+          <div class="cat">${post.category}</div>
+          <h3>${post.title}</h3>
+          <p>${post.summary}</p>
+          <a href="${post.url}" class="read-more">전체 글 읽기 →</a>
+        </div>
+      </div>
+    `).join('');
+  }
+
   fetch('posts.json?_=' + Date.now())
     .then(res => res.json())
     .then(posts => {
       posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-      const latestPosts = posts.slice(0, 8);
       const grid = document.getElementById('blogGrid');
-      grid.innerHTML = latestPosts.map((post, i) => `
-        <div class="blog-card">
-          <div class="blog-thumb" style="background:${gradients[i % gradients.length]};"></div>
-          <div class="blog-body">
-            <div class="cat">${post.category}</div>
-            <h3>${post.title}</h3>
-            <p>${post.summary}</p>
-            <a href="${post.url}" class="read-more">전체 글 읽기 →</a>
-          </div>
-        </div>
-      `).join('');
+      renderPosts(grid, posts.slice(0, PAGE_SIZE));
+
+      const oldMoreBtn = document.getElementById('blogMoreBtn');
+      if (oldMoreBtn) oldMoreBtn.remove();
+
+      if (posts.length > PAGE_SIZE) {
+        const moreBtn = document.createElement('button');
+        moreBtn.id = 'blogMoreBtn';
+        moreBtn.textContent = `이전 글 더보기 (${posts.length - PAGE_SIZE}개 더 있음) ▾`;
+        moreBtn.style.cssText = 'display:block;margin:30px auto 0;padding:12px 26px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:600;font-size:0.9rem;cursor:pointer;';
+        moreBtn.addEventListener('click', () => {
+          renderPosts(grid, posts);
+          moreBtn.remove();
+        });
+        grid.insertAdjacentElement('afterend', moreBtn);
+      }
     })
     .catch(() => {
       document.getElementById('blogGrid').innerHTML =
