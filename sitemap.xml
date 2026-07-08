@@ -1,93 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/privacy.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/adsense-topics.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/ai-stock-photo.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/chatgpt-ebook.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/elevenlabs-ai-audiobook.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/youtube-shorts-automation.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/midjourney-pod-goods.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/canva-card-news.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/notion-ai-template.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/vrew-subtitle-dubbing.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/gamma-ai-ppt.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/fast-monetization-before-adsense.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/synthesia-ai-avatar-video.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/suno-ai-music-side-hustle.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/n8n-ai-automation-agency.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://laykim829.github.io/ai-side-hustle-site/posts/chatbase-ai-chatbot-agency.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/</loc>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/about.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/privacy.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/adsense-topics.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/ai-stock-photo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/chatgpt-ebook.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/elevenlabs-ai-audiobook.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/youtube-shorts-automation.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/midjourney-pod-goods.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/canva-card-news.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/notion-ai-template.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/vrew-subtitle-dubbing.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/gamma-ai-ppt.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/fast-monetization-before-adsense.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/synthesia-ai-avatar-video.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/suno-ai-music-side-hustle.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/n8n-ai-automation-agency.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/chatbase-ai-chatbot-agency.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://laykim829.github.io/ai-side-hustle-site/posts/fireflies-ai-meeting-notes-agency.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
 </urlset>
